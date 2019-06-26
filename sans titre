@@ -1,0 +1,12 @@
+	
+//temps	
+			delay++;
+			if (delay==45){
+				temps++;
+				delay=0;}
+				
+				
+				sprintf(time,"%d",temps);
+			afficheChaine(time,15,100,100);
+
+
