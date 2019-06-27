@@ -1,10 +1,10 @@
-#include <stdlib.h> 
-#include <stdio.h>
-#include <math.h> 
-#include <string.h>
-#include "../../Documents/GfxLib/GfxLib.h"
-#include "../../Documents/GfxLib/BmpLib.h"
+#include <stdlib.h> // Pour pouvoir utiliser exit()
+#include <stdio.h> // Pour pouvoir utiliser printf()
+#include <math.h> // Pour pouvoir utiliser sin() et cos()
+#include "../../LibraryISEN/GfxLib.h" // Seul cet include est necessaire pour faire du graphique
+#include "../../LibraryISEN/BmpLib.h"
 
+#include "string.h"
 #define LargeurFenetre 1200
 #define HauteurFenetre 800
 #include "sudoku.h"
@@ -39,14 +39,14 @@ void affichage (char time[2],int temps, DonneesImageRGB *chrono){
 
 void fichierScore (FILE* fichier, sudo s){
 	
-	fichier = fopen("score.txt","w+");
+	fichier = fopen("sudoku.txt","w+");
 	fprintf(fichier,"%d",s.answer);
 	fclose(fichier);
 }
 
 
 
-sudo lancer(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB *sudoku3, DonneesImageRGB *neutron, DonneesImageRGB *phineas, DonneesImageRGB *dexter, DonneesImageRGB *chrono ,
+sudo etape(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB *sudoku3, DonneesImageRGB *neutron, DonneesImageRGB *phineas, DonneesImageRGB *dexter, DonneesImageRGB *chrono ,
  DonneesImageRGB *bande, sudo s, int temps,FILE* result){
 	
 
@@ -123,7 +123,7 @@ sudo lancer(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB 
 				ecrisImage(400,100, bande->largeurImage, bande->hauteurImage, bande->donneesRGB);
 				afficheChaine("BRAVO ! Tu as termine le test !", 40, 200,500);
 				afficheChaine("RESULTAT :", 40, 400,400);
-				result=fopen("score.txt","r+");
+				result=fopen("sudoku.txt","r+");
 				fscanf(result,"%d",&s.r);
 				sprintf(s.chaine,"%d/3",s.r);
 				afficheChaine(s.chaine, 40, 700,400);

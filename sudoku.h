@@ -1,8 +1,9 @@
-#include <stdlib.h> 
-#include <stdio.h>
-#include <math.h> 
-#include "../../Documents/GfxLib/GfxLib.h"
-#include "../../Documents/GfxLib/BmpLib.h"
+#include <stdlib.h> // Pour pouvoir utiliser exit()
+#include <stdio.h> // Pour pouvoir utiliser printf()
+#include <math.h> // Pour pouvoir utiliser sin() et cos()
+#include "../../LibraryISEN/GfxLib.h" // Seul cet include est necessaire pour faire du graphique
+#include "../../LibraryISEN/BmpLib.h"
+
 #include "string.h"
 #define LargeurFenetre 1200
 #define HauteurFenetre 800
@@ -18,7 +19,7 @@ typedef struct Sudo{
 
 
 sudo gereClavierReponse (sudo s);
-sudo lancer(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB *sudoku3, DonneesImageRGB *neutron, DonneesImageRGB *phineas, DonneesImageRGB *dexter, DonneesImageRGB *chrono , 
+sudo etape(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB *sudoku3, DonneesImageRGB *neutron, DonneesImageRGB *phineas, DonneesImageRGB *dexter, DonneesImageRGB *chrono , 
 DonneesImageRGB *bande, sudo s, int temps,FILE* result);
 sudo step(DonneesImageRGB *sudoku1, DonneesImageRGB *sudoku2, DonneesImageRGB *sudoku3, DonneesImageRGB *neutron, DonneesImageRGB *phineas, DonneesImageRGB *dexter, DonneesImageRGB *chrono ,
 DonneesImageRGB *bande, sudo s, int temps,FILE* result);
